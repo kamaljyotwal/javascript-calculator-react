@@ -1,0 +1,19 @@
+@import "./mixin.scss";
+
+.App {
+  @include flexendformobile();
+  height: 100vh;
+  background: rgb(251, 251, 251);
+  background: linear-gradient(35deg, rgba(251, 251, 251, 1) 63%, rgba(231, 231, 231, 1) 85%);
+}
+.calculator-body {
+  width: 350px;
+  height: 80vh;
+  border: 4px solid #121212;
+  background-color: #121212;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+}
+.screen {
+  background-color: aqua;
+}

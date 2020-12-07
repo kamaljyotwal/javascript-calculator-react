@@ -1,0 +1,13 @@
+// Includes all mixins being used in this project.
+
+@mixin centerflexin {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin flexendformobile {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
