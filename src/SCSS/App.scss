@@ -1,4 +1,20 @@
 @import "./mixin.scss";
+@import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;600&display=swap");
+
+%borderRadius {
+  border-top-left-radius: 40px;
+  border-top-right-radius: 40px;
+}
+@mixin buttonhover {
+  &:hover {
+    transform: scale(1.06, 1.06);
+    transition: all 100ms;
+    cursor: pointer;
+  }
+  &:active {
+    background-color: red;
+  }
+}
 
 .App {
   @include flexendformobile();
@@ -7,13 +23,82 @@
   background: linear-gradient(35deg, rgba(251, 251, 251, 1) 63%, rgba(231, 231, 231, 1) 85%);
 }
 .calculator-body {
-  width: 350px;
-  height: 80vh;
-  border: 4px solid #121212;
+  width: 310px;
+  min-width: 300px;
+  height: 82vh;
+  margin-bottom: -5px;
+  // border: 4px solid #737373;
+  border: 4px solid #dbdbdb;
   background-color: #121212;
-  border-top-left-radius: 20px;
-  border-top-right-radius: 20px;
+  box-shadow: 0px 1px 5px 5px #3f3f3f;
+  @extend %borderRadius;
+  // overflow: hidden;
+  display: flex;
+  flex-direction: column;
 }
 .screen {
-  background-color: aqua;
+  font-family: "JetBrains Mono", monospace;
+  @extend %borderRadius;
+  height: 40%;
+  max-height: 200px;
+}
+.buttonContainer {
+  // border: 2px solid red;
+  height: 100%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+}
+
+.buttonContainer {
+  display: flex;
+  .leftPanel {
+    width: 70%;
+  }
+}
+.leftPanel {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  margin-top: 3px;
+}
+
+.calcoperations {
+  display: flex;
+  flex-direction: row;
+}
+.numerals {
+  justify-content: center;
+  display: flex;
+  flex-flow: row wrap;
+}
+.button {
+  @include button;
+  @include centerFlexin;
+  margin: 5px;
+  font-size: 18px;
+  background-color: #414141;
+  font-family: "JetBrains Mono", monospace;
+  @include buttonhover();
+}
+
+.numbers:nth-child(10) {
+  width: 60%;
+}
+
+.operators {
+  .button {
+    background-color: #fe9b13;
+    margin: 9px 5px;
+    font-size: 28px;
+    @include buttonhover();
+  }
+}
+.calcoperations {
+  .button {
+    background-color: #b5b5b5;
+    color: black;
+    @include buttonhover();
+  }
 }

@@ -1,6 +1,6 @@
 // Includes all mixins being used in this project.
 
-@mixin centerflexin {
+@mixin centerFlexin {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -10,4 +10,11 @@
   display: flex;
   justify-content: center;
   align-items: flex-end;
+}
+@mixin button {
+  border: 1px solid #414141;
+  border-radius: 50px;
+  color: white;
+  width: 58px;
+  height: 58px;
 }
